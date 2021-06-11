@@ -26,8 +26,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: test
-        run: .mvnw test #test command
+#       - name: test
+#         run: .mvnw test #test command
   deploy: 
     runs-on: ubuntu-latest
     steps:
@@ -36,3 +36,12 @@ jobs:
         with:
           command: app sync
           options: test-app
+          
+          
+      - uses: omegion/argocd-app-actions@v0.1.0
+        with:
+          addres: 121.139.74.221:8080
+          token: wjas8da9igojqn42u89w7voaerijszixc8
+          appName: test-app
+          
+          
